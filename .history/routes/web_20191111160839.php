@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/olamundo', function () {
-    return 'olá mundo';
-})
+Route::get('/series', 'SeriesController@index');
+Route::get('/series/criar', 'SeriesController@create');
