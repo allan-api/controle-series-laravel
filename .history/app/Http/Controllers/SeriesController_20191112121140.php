@@ -12,9 +12,9 @@ class SeriesController extends Controller
 
         $mensagem = $request->session()->get('mensagem');
 
-        var_dump($request->session());
+        var_dump($mensagem);
         exit;
-
+        
         return view('series.index', compact('series', 'mensagem'));
 
     }

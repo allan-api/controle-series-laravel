@@ -12,8 +12,6 @@ class SeriesController extends Controller
 
         $mensagem = $request->session()->get('mensagem');
 
-        var_dump($request->session());
-        exit;
 
         return view('series.index', compact('series', 'mensagem'));
 
@@ -28,7 +26,7 @@ class SeriesController extends Controller
     {
         $serie = Serie::create($request->all());
 
-        $request->session()->flash('mensagem', "Série {$serie->nome} criado com sucesso!");
+        $request->session()->put('mensagem', "Série {$serie->nome} criado com sucesso!");
 
         return redirect('/series');
     }
